@@ -2,7 +2,7 @@
 //  UIImage+CYClip.h
 //  图片裁剪
 //
-//  Created by 李春阳 on 15/2/14.
+//  Created by cyrill on 15/2/14.
 //  Copyright (c) 2015年 CY. All rights reserved.
 //
 
