@@ -89,7 +89,7 @@
     [rightButton setTitle:@"正在播放" forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(btnItemClick:) forControlEvents:UIControlEventTouchUpInside];
     [rightButton setTintColor:[UIColor orangeColor]];
-    rightButton.frame = CGRectMake(1, 0, 60, 30);
+    rightButton.frame = CGRectMake(1, 0, 80, 30);
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     
     self.navigationItem.rightBarButtonItem = item;

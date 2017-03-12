@@ -34,7 +34,7 @@
         self.navigationController.navigationBar.alpha = 0;
     }];
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"播放类型" style:UIBarButtonItemStylePlain target:self action:@selector(button_click)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"播放类型" style:UIBarButtonItemStylePlain target:self action:@selector(button_click)];
 }
 
 
@@ -71,13 +71,17 @@
 - (void)hide
 {
     [self.menu removeFromSuperview];
+    
+    [self.menu.buttons removeAllObjects];
+    
     self.menu = nil;
 }
 
 -(void)button_click
 {
     if (self.menu == nil) {
-        self.menu = [[PopoverView alloc] initWithFrame:CGRectMake(215, 50, 100, 80)];
+        
+        self.menu = [[PopoverView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-100, 50, 100, 80)];
 
         self.menu.delegate = self;
         [self.navigationController.view addSubview:self.menu];
@@ -85,6 +89,7 @@
         [self.menu addMenuItem:@"单曲循环"];
         [self.menu addMenuItem:@"多曲循环"];
         self.menu.backgroundColor=[UIColor clearColor];
+        
         [UIView animateWithDuration:.3 animations:^(void) {
             self.menu.alpha = 1;
         }];
@@ -125,7 +130,21 @@
 	NSError *error;
 	NSURL *url=[NSURL fileURLWithPath:path];
 
+    
+    
+//    NSURL *url = [NSURL URLWithString:@"http://omoxjlk85.bkt.clouddn.com/9%20The%20starts%20shine.mp3"];
+//    
+//    NSData *audioData = [NSData dataWithContentsOfURL:url];
+//    NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *filePath = [NSString stringWithFormat:@"%@/%@.mp3", docDirPath , @"1"];
+//    [audioData writeToFile:filePath atomically:YES];
+//    
+//    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+    
 	audioPlayer=[[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+    
+//    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
+    
 	audioPlayer.numberOfLoops=0;//0为单曲播放,1循环播放
 	audioPlayer.delegate=self;//设置回调方法的委托
 	if(audioPlayer==nil)

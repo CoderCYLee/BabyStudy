@@ -29,6 +29,7 @@
 {
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [menuButton setTitle:name forState:UIControlStateNormal];
+    menuButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [menuButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [menuButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [menuButton setBackgroundImage:[UIImage imageNamed:@"button"] forState:UIControlStateNormal];
@@ -44,7 +45,8 @@
     
     
     if ([self.delegate respondsToSelector:@selector(popoverView:selectedAtIndex:)])
-        [self.delegate performSelector:@selector(popoverView:selectedAtIndex:) withObject:self withObject:@(index)];
+        [self.delegate popoverView:self selectedAtIndex:index];
+//        [self.delegate performSelector:@selector(popoverView:selectedAtIndex:) withObject:self withObject:@(index)];
 }
 
 - (void)layoutSubviews

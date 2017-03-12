@@ -21,7 +21,7 @@
     if (self) {
         self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"音乐开关" style:UIBarButtonItemStylePlain target:self action:@selector(button_click)];
         
-        self.title=@"跟我学英语字母";
+        self.title = @"跟我学英语字母";
     }
     return self;
 }
