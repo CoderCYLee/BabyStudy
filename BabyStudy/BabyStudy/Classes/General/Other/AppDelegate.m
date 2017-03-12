@@ -23,25 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    double version = [[UIDevice currentDevice].systemVersion doubleValue];
-    
-    if (version >= 9.0) {
-        
-        if (self.window.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-            NSLog(@"你的手机支持3D Touch!");
-            
-            UIApplicationShortcutIcon *shortcutIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_1"];
-            
-            UIMutableApplicationShortcutItem *firstItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"first" localizedTitle:@"制作照片书" localizedSubtitle:nil icon:shortcutIcon userInfo:nil];
-            //        UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"打开" localizedTitle:@"打开"];
-            UIApplicationShortcutIcon *shortcutIcon1 = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_2"];
-            UIMutableApplicationShortcutItem *shortItem2 = [[UIMutableApplicationShortcutItem alloc] initWithType:@"alert" localizedTitle:@"制作相框" localizedSubtitle:nil icon:shortcutIcon1 userInfo:nil];
-            NSArray *shortItems = [[NSArray alloc] initWithObjects:firstItem, shortItem2, firstItem, shortItem2, nil];
-            [[UIApplication sharedApplication] setShortcutItems:shortItems];
-        } else {
-            NSLog(@"你的手机暂不支持3D Touch!");
-        }
-    }
+    [self createShortcutItems];
     
     // 1.创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -192,6 +174,22 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)createShortcutItems {
+    double version = [[UIDevice currentDevice].systemVersion doubleValue];
+    if (version >= 9.0) {
+        
+//        UIApplicationShortcutIcon *shortcutIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_1"];
+//        
+//        UIMutableApplicationShortcutItem *firstItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"first" localizedTitle:@"制作照片书" localizedSubtitle:nil icon:shortcutIcon userInfo:nil];
+//        //        UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"打开" localizedTitle:@"打开"];
+//        UIApplicationShortcutIcon *shortcutIcon1 = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_2"];
+//        UIMutableApplicationShortcutItem *shortItem2 = [[UIMutableApplicationShortcutItem alloc] initWithType:@"alert" localizedTitle:@"制作相框" localizedSubtitle:nil icon:shortcutIcon1 userInfo:nil];
+//        NSArray *shortItems = [[NSArray alloc] initWithObjects:firstItem, shortItem2, firstItem, shortItem2, nil];
+//        [[UIApplication sharedApplication] setShortcutItems:shortItems];
+    
+    }
 }
 
 @end

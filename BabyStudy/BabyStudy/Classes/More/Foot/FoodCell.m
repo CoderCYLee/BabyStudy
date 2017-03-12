@@ -35,16 +35,19 @@
     
     _food1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _food1.contentMode = UIViewContentModeScaleAspectFill;
+    _food1.imageView.contentMode = UIViewContentModeScaleAspectFit;
     _food1.frame = CGRectMake(10, 20, foodW, cellH-30);
     _food1.tag = 1;
     
     _food2 = [UIButton buttonWithType:UIButtonTypeCustom];
     _food2.contentMode = UIViewContentModeScaleAspectFill;
+    _food2.imageView.contentMode = UIViewContentModeScaleAspectFit;
     _food2.frame = CGRectMake(10 +foodW + margin , 20, foodW, cellH-30);
     _food2.tag = 2;
     
     _food3 = [UIButton buttonWithType:UIButtonTypeCustom];
     _food3.contentMode = UIViewContentModeScaleAspectFill;
+    _food3.imageView.contentMode = UIViewContentModeScaleAspectFit;
     _food3.frame = CGRectMake(10+2*(foodW+margin), 20, foodW, cellH-30);
     _food3.tag = 3;
     

@@ -2619,7 +2619,7 @@
 					"$(PROJECT_DIR)/BabyStudy/Classes/Lib/UMSocial_Sdk_4.2.1",
 					"$(PROJECT_DIR)/BabyStudy/Lib/UMSocial_Sdk_4.2.1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.future.cc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoderLee.babystudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2641,7 +2641,7 @@
 					"$(PROJECT_DIR)/BabyStudy/Classes/Lib/UMSocial_Sdk_4.2.1",
 					"$(PROJECT_DIR)/BabyStudy/Lib/UMSocial_Sdk_4.2.1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.future.cc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoderLee.babystudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
