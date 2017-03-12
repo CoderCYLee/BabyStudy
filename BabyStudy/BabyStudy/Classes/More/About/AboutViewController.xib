@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="vesionLabel" destination="q2C-aW-Sho" id="Xi4-mP-h05"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_128x128" translatesAutoresizingMaskIntoConstraints="NO" id="buL-cI-cRH">
+                    <rect key="frame" x="250" y="100" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="oac-No-TET"/>
+                        <constraint firstAttribute="width" constant="100" id="xPR-Ma-GyS"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="宝宝教育" translatesAutoresizingMaskIntoConstraints="NO" id="FDD-ZR-ffs">
+                    <rect key="frame" x="219" y="208" width="162" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="chF-7Y-OaR"/>
+                        <constraint firstAttribute="width" constant="162" id="oFp-6E-tEx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2C-aW-Sho">
+                    <rect key="frame" x="271" y="263" width="58" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="XlB-eq-gms"/>
+                        <constraint firstAttribute="width" constant="58" id="zL1-bJ-d2D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此应用适用于3-6岁的儿童,对儿童的早期教育,智力开发,启发宝宝对事物的兴趣有很大帮助,谢谢您的支持!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GC-vV-LG8">
+                    <rect key="frame" x="160" y="292" width="280" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="2OW-Pq-lS0"/>
+                        <constraint firstAttribute="height" constant="200" id="VCq-1x-zh2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.066666666669999999" green="0.54901960780000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="FDD-ZR-ffs" secondAttribute="centerX" id="1ar-sD-wPK"/>
+                <constraint firstItem="0GC-vV-LG8" firstAttribute="top" secondItem="q2C-aW-Sho" secondAttribute="bottom" constant="8" id="1n1-PY-QSv"/>
+                <constraint firstAttribute="centerX" secondItem="buL-cI-cRH" secondAttribute="centerX" id="7gu-Es-YCl"/>
+                <constraint firstAttribute="centerX" secondItem="q2C-aW-Sho" secondAttribute="centerX" id="DO7-IV-11T"/>
+                <constraint firstItem="FDD-ZR-ffs" firstAttribute="top" secondItem="buL-cI-cRH" secondAttribute="bottom" constant="8" id="Hzk-Xh-sAV"/>
+                <constraint firstItem="q2C-aW-Sho" firstAttribute="top" secondItem="FDD-ZR-ffs" secondAttribute="bottom" constant="8" id="KZH-hK-x1N"/>
+                <constraint firstItem="buL-cI-cRH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="cDU-tK-2Re"/>
+                <constraint firstAttribute="centerX" secondItem="0GC-vV-LG8" secondAttribute="centerX" id="lNb-G6-Plq"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_128x128" width="128" height="128"/>
+        <image name="宝宝教育" width="175" height="51"/>
+    </resources>
+</document>
