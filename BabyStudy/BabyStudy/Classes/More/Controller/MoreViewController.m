@@ -49,8 +49,8 @@
     
     
     self.dataArray = [[NSMutableArray alloc]initWithObjects:@"脑筋急转弯",@"儿童饮食",@"儿童健康",@"宝宝资讯",@"关于",nil];
-    _newsArray=[[NSMutableArray alloc]initWithObjects:@"对开发儿童的大脑非常有帮助",@"对儿童的健康成长有帮助",@"有儿童常见的疾病治疗资料",@"通过网络关注儿童健康",@"关于我们的信息",nil];
-    _imageArray=[[NSMutableArray alloc]initWithObjects:@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",nil];
+    _newsArray = [[NSMutableArray alloc]initWithObjects:@"对开发儿童的大脑非常有帮助",@"对儿童的健康成长有帮助",@"有儿童常见的疾病治疗资料",@"通过网络关注儿童健康",@"关于我们的信息",nil];
+    _imageArray = [[NSMutableArray alloc]initWithObjects:@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",@"shanguang-a@2x.png",nil];
     
     UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, screenW, screenH-64-49) style:UITableViewStyleGrouped];
     tableview.backgroundColor = [UIColor clearColor];
