@@ -27,8 +27,8 @@
 
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
-    UIImageView *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, screenW, screenH)];
-    imageview.image=[UIImage imageNamed:@"yd2"];
+    UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, screenW, screenH)];
+    imageview.image = [UIImage imageNamed:@"yd2"];
 
     // 改变图片显示的位置或拉伸等等
     imageview.contentMode = UIViewContentModeScaleAspectFill;

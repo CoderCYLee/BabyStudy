@@ -26,7 +26,6 @@
 
 - (void)createUI
 {
-
     self.title = @"分享";
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mh"]];
