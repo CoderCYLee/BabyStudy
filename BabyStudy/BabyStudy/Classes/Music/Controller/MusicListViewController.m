@@ -141,9 +141,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        [[NSBundle mainBundle] loadNibNamed:@"tableCell" owner:self options:nil];
-        cell = tableViewCell;
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"tableCell" owner:self options:nil] lastObject];
         cell.opaque = NO;//opaque不透明的，NO为透明的
         cell.backgroundColor = [UIColor clearColor];
     }

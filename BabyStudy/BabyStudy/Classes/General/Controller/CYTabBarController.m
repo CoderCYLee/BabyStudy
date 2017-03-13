@@ -103,6 +103,8 @@
     
     MoreViewController *more = [[MoreViewController alloc] init];
     [self addOneChlildVc:more title:@"更多" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_setting_hl"];
+    
+    
 }
 
 /**
