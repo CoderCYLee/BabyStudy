@@ -21,8 +21,8 @@
 {
     [super viewDidLoad];
 
-    self.navigationController.navigationBarHidden=YES;
-    self.title=@"摘西瓜";
+    self.navigationController.navigationBarHidden = YES;
+    self.title = @"摘西瓜";
     self.view.frame = CGRectMake(0, 0, screenW, screenH);
     m_clearView.frame = CGRectMake(0, 0, screenW, screenH);
     m_failView.frame = CGRectMake(0, 0, screenW, screenH);;
@@ -47,7 +47,7 @@
     [self reset];
 }
 
-- (void) setUpSounds
+- (void)setUpSounds
 {    
 	NSBundle *mainBundle = [NSBundle mainBundle];
 	m_pickSound = [[SoundWrapper alloc] initWithContentsOfFile:[mainBundle pathForResource:@"pick" ofType:@"wav"]];
@@ -77,7 +77,7 @@
 	[m_praiseSounds addObject:[[SoundWrapper alloc]initWithContentsOfFile:[mainBundle pathForResource:@"great" ofType:@"wav"]]];
 }
 
--(void)reset
+- (void)reset
 {
     int i = 0;
     for (UIImageView *imageView in m_melonImageViews) 
@@ -112,15 +112,16 @@
 			break;
 		}
 	}
-        UITouch *onetouch=[touches anyObject];
-        if(onetouch.tapCount==1)
-        {
-            self.navigationController.navigationBarHidden=YES;
-        }
-        else if(onetouch.tapCount==2)
-        {
-            self.navigationController.navigationBarHidden=NO;
-        }
+    
+    UITouch *onetouch=[touches anyObject];
+    if(onetouch.tapCount==1)
+    {
+        self.navigationController.navigationBarHidden=YES;
+    }
+    else if(onetouch.tapCount==2)
+    {
+        self.navigationController.navigationBarHidden=NO;
+    }
 }
 
 - (void)touchesMoved: (NSSet *) touches withEvent: (UIEvent *) event
@@ -175,16 +176,16 @@
 	}	
 }
 
-- (void) addCurrentCount
+- (void)addCurrentCount
 {
-	m_currentCount++;
+	m_currentCount ++;
 	m_currentCountView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ia.png",m_currentCount]];
 	m_bascketView.image = [UIImage imageNamed: [NSString stringWithFormat:@"bascket_w%i.png",m_currentCount]];
 	SoundWrapper *voice = [m_currentCountSounds objectAtIndex: m_currentCount - 1];
 	[voice play];
 }
 
-- (IBAction) donePressed
+- (IBAction)donePressed
 {
 	[m_buttonSound play];
 	if (m_currentCount == m_expectedCount) 
@@ -195,9 +196,7 @@
 		[self.view addSubview: m_clearView];
 		m_clearView.alpha = 0;
 		m_clearView.alpha = 1;
-	}
-    else 
-    {
+	} else {
 		int i = arc4random()%3;
 		SoundWrapper *voice = [m_blameSounds objectAtIndex:i];
 		[voice play];
@@ -218,7 +217,7 @@
     [UIView commitAnimations];
 }
 
-- (void) handleDoubleTap: (CGPoint) tapLocation
+- (void)handleDoubleTap:(CGPoint)tapLocation
 {
     if ([m_tapDetectingDelegate respondsToSelector: @selector(tapDetectView:gotDoubleTapAtPoint:)])
         [m_tapDetectingDelegate tapDetectView:self.view gotDoubleTapAtPoint: tapLocation];
