@@ -12,6 +12,7 @@
 #import "MusicListViewController.h"
 #import "StoryViewController.h"
 #import "ShareViewController.h"
+#import "VideoViewController.h"
 #import "GameBaseViewController.h"
 
 @interface CYTabBarController ()
@@ -94,6 +95,9 @@
     
     MusicListViewController *music = [[MusicListViewController alloc] init];
     [self addOneChlildVc:music title:@"音乐" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_picture_hl"];
+    
+    VideoViewController *video = [[VideoViewController alloc] init];
+    [self addOneChlildVc:video title:@"视频" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_picture_hl"];
     
     GameBaseViewController *game = [[GameBaseViewController alloc] init];
     [self addOneChlildVc:game title:@"游戏" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_video_hl"];

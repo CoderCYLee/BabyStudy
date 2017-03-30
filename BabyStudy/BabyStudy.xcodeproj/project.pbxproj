@@ -419,6 +419,7 @@
 		11F9EBED1AD1129800445A45 /* CYAccessTokenParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EBEC1AD1129800445A45 /* CYAccessTokenParam.m */; };
 		11F9EBF01AD112BA00445A45 /* CYAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EBEF1AD112BA00445A45 /* CYAccount.m */; };
 		11F9EBFC1AD129A400445A45 /* GuoDongBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EBFB1AD129A400445A45 /* GuoDongBlockView.m */; };
+		E7CE8D391E8D1010007A2758 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CE8D381E8D1010007A2758 /* VideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -946,6 +947,8 @@
 		11F9EBEF1AD112BA00445A45 /* CYAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYAccount.m; sourceTree = "<group>"; };
 		11F9EBFA1AD129A400445A45 /* GuoDongBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuoDongBlockView.h; sourceTree = "<group>"; };
 		11F9EBFB1AD129A400445A45 /* GuoDongBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuoDongBlockView.m; sourceTree = "<group>"; };
+		E7CE8D371E8D1010007A2758 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		E7CE8D381E8D1010007A2758 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1033,6 +1036,7 @@
 				111F91711ACB9AA000C9B742 /* Newfeature */,
 				111F917A1ACB9AA000C9B742 /* Story */,
 				111F91611ACB9AA000C9B742 /* Music */,
+				E7CE8D331E8D0F89007A2758 /* Video */,
 				111F91011ACB9AA000C9B742 /* Game */,
 				1132CD9B1ACD6E74004AAEFE /* Share */,
 				1132CD831ACD6E74004AAEFE /* More */,
@@ -1954,6 +1958,39 @@
 			path = OAuth;
 			sourceTree = "<group>";
 		};
+		E7CE8D331E8D0F89007A2758 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E7CE8D341E8D0F89007A2758 /* Controllers */,
+				E7CE8D351E8D0F89007A2758 /* Model */,
+				E7CE8D361E8D0F89007A2758 /* Views */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		E7CE8D341E8D0F89007A2758 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7CE8D371E8D1010007A2758 /* VideoViewController.h */,
+				E7CE8D381E8D1010007A2758 /* VideoViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E7CE8D351E8D0F89007A2758 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7CE8D361E8D0F89007A2758 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1998,7 +2035,7 @@
 		111F90CF1ACB99D100C9B742 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = cyrill;
 				TargetAttributes = {
 					111F90D61ACB99D100C9B742 = {
@@ -2436,6 +2473,7 @@
 				1197069C1BB26D8400CB2E52 /* SDWebImagePrefetcher.m in Sources */,
 				1197069D1BB26D8400CB2E52 /* UIButton+WebCache.m in Sources */,
 				119706911BB26D8400CB2E52 /* MBProgressHUD+MJ.m in Sources */,
+				E7CE8D391E8D1010007A2758 /* VideoViewController.m in Sources */,
 				1197068C1BB26D8400CB2E52 /* AFSecurityPolicy.m in Sources */,
 				111F91831ACB9AA000C9B742 /* BabyLearnABC.m in Sources */,
 				119706A21BB26D8400CB2E52 /* UIImageView+WebCache.m in Sources */,
@@ -2531,6 +2569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2540,15 +2579,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2572,6 +2615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2581,8 +2625,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2590,6 +2636,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -2622,6 +2669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoderLee.BabyStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -2644,6 +2692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoderLee.BabyStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -2662,6 +2711,7 @@
 				);
 				INFOPLIST_FILE = BabyStudyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CoderLee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabyStudy.app/BabyStudy";
 			};
@@ -2678,6 +2728,7 @@
 				);
 				INFOPLIST_FILE = BabyStudyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CoderLee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabyStudy.app/BabyStudy";
 			};
