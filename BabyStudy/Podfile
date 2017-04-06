@@ -8,5 +8,6 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'MBProgressHUD’
 pod 'pop'
+pod 'RQShineLabel'
 
 end

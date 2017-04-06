@@ -11,6 +11,7 @@
 #import "NewfeatureViewController.h"
 #import "PanoramaViewController.h"
 #import "UMSocial.h"
+#import <RQShineLabel.h>
 
 @interface AppDelegate ()
 
@@ -52,15 +53,15 @@
         UIImageView *img2 = [[UIImageView alloc] initWithFrame:self.window.bounds];
         img2.image = [UIImage imageNamed:@"yd5"];
         img2.contentMode = UIViewContentModeScaleAspectFill;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(screenW/6, screenH*0.7, screenW/3*2, screenW/3)];
+        RQShineLabel *label = [[RQShineLabel alloc] initWithFrame:CGRectMake(screenW/6, screenH*0.7, screenW/3*2, screenW/3)];
         label.text = tip[arc4random()%4];
         label.numberOfLines = 0;
         label.textColor = [UIColor whiteColor];
         label.backgroundColor = [UIColor blackColor];
         label.alpha = 0.7;
-        label.font = [UIFont systemFontOfSize:20];
+        label.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0];;
         [img2 addSubview:label];
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(screenW/3, label.y-35, screenW/3, 30)];
+        RQShineLabel *title = [[RQShineLabel alloc] initWithFrame:CGRectMake(screenW/3, label.y-35, screenW/3, 30)];
         title.backgroundColor = [UIColor blackColor];
         title.alpha = 0.7;
         title.text = @"小提示";
@@ -68,6 +69,18 @@
         title.textAlignment = NSTextAlignmentCenter;
         [img2 addSubview:title];
         [tabBarVC.view addSubview:img2];
+        
+        if (label.isVisible) {
+            [label fadeOutWithCompletion:^{
+                
+                [label shine];
+//                [title shine];
+            }];
+        }
+        else {
+            [label shine];
+//            [title shine];
+        }
         
         [UIView animateWithDuration:1.0f delay:2.0f options:UIViewAnimationOptionTransitionNone animations:^{
             img2.alpha = 0;
