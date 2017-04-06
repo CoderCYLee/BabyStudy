@@ -106,11 +106,11 @@ static NSMutableDictionary *_soundIDs;
     if (!soundID) {
         
         //音效文件的URL
-        NSURL *url=[[NSBundle mainBundle]URLForResource:filename withExtension:nil];
+        NSURL *url=[[NSBundle mainBundle] URLForResource:filename withExtension:nil];
         if (!url) return;//如果URL不存在，那么就直接返回
         
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
-        NSLog(@"%ld",status);
+        NSLog(@"%d",(int)status);
         //存入到字典中
         [self soundIDs][filename]=@(soundID);
     }
