@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+target 'BabyStudy' do
+
+pod 'Masonry'
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'MBProgressHUD’
+pod 'pop'
+
+end

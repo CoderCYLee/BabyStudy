@@ -7,8 +7,11 @@
 //
 
 #import "VideoViewController.h"
+#import "LocationViewController.h"
 
 @interface VideoViewController ()
+
+@property (nonatomic, strong) LocationViewController *localVC;
 
 @end
 
@@ -17,11 +20,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"视频";
+    
+    self.localVC.hidesBottomBarWhenPushed  = YES;
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    
+    [self.navigationController pushViewController:self.localVC animated:NO];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (LocationViewController *)localVC
+{
+    if (!_localVC) {
+        _localVC = [[LocationViewController alloc] init];
+    }
+    return _localVC;
 }
 
 /*

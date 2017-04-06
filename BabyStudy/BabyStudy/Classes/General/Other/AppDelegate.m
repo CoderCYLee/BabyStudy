@@ -25,6 +25,7 @@
     
     [self createShortcutItems];
     
+    
     // 1.创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

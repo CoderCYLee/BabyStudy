@@ -97,7 +97,7 @@
  */
 - (void)accessTokenWithCode:(NSString *)code
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"client_id"] = CYAppKey;
@@ -106,9 +106,9 @@
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
 
-    
     // post
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *accountDict) {
+    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSMutableDictionary  *accountDict) {
+        
         
         // 隐藏HUD
         [MBProgressHUD hideHUD];
@@ -126,14 +126,13 @@
         // 存储授权成功的信息
         // 字典转模型
         
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUD];
         
         
         CYLog(@"请求失败--%@", error);
     }];
+     
 }
 
 
