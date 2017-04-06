@@ -13,7 +13,7 @@
  *存放所有的音乐播放器
  */
 static NSMutableDictionary *_musicPlayers;
-+(NSMutableDictionary *)musicPlayers
++ (NSMutableDictionary *)musicPlayers
 {
     if (_musicPlayers==nil) {
         _musicPlayers=[NSMutableDictionary dictionary];
@@ -25,7 +25,7 @@ static NSMutableDictionary *_musicPlayers;
  *存放所有的音效ID
  */
 static NSMutableDictionary *_soundIDs;
-+(NSMutableDictionary *)soundIDs
++ (NSMutableDictionary *)soundIDs
 {
     if (_soundIDs==nil) {
         _soundIDs=[NSMutableDictionary dictionary];
@@ -37,11 +37,11 @@ static NSMutableDictionary *_soundIDs;
 /**
  *播放音乐
  */
-+(BOOL)playMusic:(NSString *)filename
++ (BOOL)playMusic:(NSString *)filename
 {
     if (!filename) return NO;//如果没有传入文件名，那么直接返回
     //1.取出对应的播放器
-    AVAudioPlayer *player=[self musicPlayers][filename];
+    AVAudioPlayer *player = [self musicPlayers][filename];
     
     //2.如果播放器没有创建，那么就进行初始化
     if (!player) {
@@ -56,7 +56,7 @@ static NSMutableDictionary *_soundIDs;
         if (![player prepareToPlay]) return NO;//如果缓冲失败，那么就直接返回
         
         //2.4存入字典
-        [self musicPlayers][filename]=player;
+        [self musicPlayers][filename] = player;
     }
     
     //3.播放
@@ -99,20 +99,20 @@ static NSMutableDictionary *_soundIDs;
 {
     if (!filename) return;
     //1.取出对应的音效
-    SystemSoundID soundID=[[self soundIDs][filename] unsignedIntegerValue];
+    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntegerValue];
     
     //2.播放音效
     //2.1如果音效ID不存在，那么就创建
     if (!soundID) {
         
         //音效文件的URL
-        NSURL *url=[[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
         if (!url) return;//如果URL不存在，那么就直接返回
         
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef)(url), &soundID);
         NSLog(@"%d",(int)status);
         //存入到字典中
-        [self soundIDs][filename]=@(soundID);
+        [self soundIDs][filename] = @(soundID);
     }
     
     //2.2有音效ID后，播放音效
@@ -120,13 +120,13 @@ static NSMutableDictionary *_soundIDs;
 }
 
 //销毁音效
-+(void)disposeSound:(NSString *)filename
++ (void)disposeSound:(NSString *)filename
 {
     //如果传入的文件名为空，那么就直接返回
     if (!filename) return;
     
     //1.取出对应的音效
-    SystemSoundID soundID=[[self soundIDs][filename] unsignedIntegerValue];
+    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntegerValue];
     
     //2.销毁
     if (soundID) {
