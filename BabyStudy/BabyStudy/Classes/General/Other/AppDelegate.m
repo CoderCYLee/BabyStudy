@@ -21,7 +21,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self createShortcutItems];
@@ -130,7 +129,7 @@
 
 /**
  *  在viewWillAppear里面添加如下代码：
- //分组列表头部空白处理
+ // 分组列表头部空白处理
  CGRect frame = myTableView.tableHeaderView.frame;
  frame.size.height = 0.1;
  UIView *headerView = [[UIView alloc] initWithFrame:frame];
@@ -191,19 +190,36 @@
 }
 
 - (void)createShortcutItems {
+    
     double version = [[UIDevice currentDevice].systemVersion doubleValue];
     if (version >= 9.0) {
-        
-//        UIApplicationShortcutIcon *shortcutIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_1"];
-//        
-//        UIMutableApplicationShortcutItem *firstItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"first" localizedTitle:@"制作照片书" localizedSubtitle:nil icon:shortcutIcon userInfo:nil];
-//        //        UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"打开" localizedTitle:@"打开"];
-//        UIApplicationShortcutIcon *shortcutIcon1 = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_2"];
-//        UIMutableApplicationShortcutItem *shortItem2 = [[UIMutableApplicationShortcutItem alloc] initWithType:@"alert" localizedTitle:@"制作相框" localizedSubtitle:nil icon:shortcutIcon1 userInfo:nil];
-//        NSArray *shortItems = [[NSArray alloc] initWithObjects:firstItem, shortItem2, firstItem, shortItem2, nil];
-//        [[UIApplication sharedApplication] setShortcutItems:shortItems];
+
+//        if (self.window.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            UIApplicationShortcutIcon *shortcutIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_1"];
+            
+            UIMutableApplicationShortcutItem *firstItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.babystudy.firstItem" localizedTitle:@"故事" localizedSubtitle:nil icon:shortcutIcon userInfo:nil];
+            //        UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"打开" localizedTitle:@"打开"];
+            UIApplicationShortcutIcon *shortcutIcon1 = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon_2"];
+            UIMutableApplicationShortcutItem *shortItem2 = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.babystudy.secondItem" localizedTitle:@"音乐" localizedSubtitle:nil icon:shortcutIcon1 userInfo:nil];
+            NSArray *shortItems = [[NSArray alloc] initWithObjects:firstItem, shortItem2, nil];
+            [[UIApplication sharedApplication] setShortcutItems:shortItems];
+        }
+//    }
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    CYTabBarController *rootVC = (CYTabBarController *)self.window.rootViewController;
     
+    if ([shortcutItem.type isEqualToString:@"com.babystudy.firstItem"]) {
+        [rootVC setSelectedIndex:0];
+    } else {
+        [rootVC setSelectedIndex:1];
     }
 }
+
+//- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+//
+//
+//}
 
 @end
