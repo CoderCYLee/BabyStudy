@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (CYClip)
-+ (instancetype)circleImage:(UIImage *)image borderWidth:(CGFloat)bodrerWidth borderColor:(UIColor *)borderColor;
 
++ (instancetype)circleImage:(UIImage *)image borderWidth:(CGFloat)bodrerWidth borderColor:(UIColor *)borderColor;
 
 @end

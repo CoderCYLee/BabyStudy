@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Extension)
+
 + (UIImage *)imageWithColor:(UIColor *)color;
 
 + (UIImage *)resizedImage:(NSString *)name;
+
 @end

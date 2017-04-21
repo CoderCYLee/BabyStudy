@@ -99,8 +99,8 @@
     GameBaseViewController *game = [[GameBaseViewController alloc] init];
     [self addOneChlildVc:game title:@"游戏" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_video_hl"];
     
-    ShareViewController *share = [[ShareViewController alloc] init];
-    [self addOneChlildVc:share title:@"分享" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_setting_hl"];
+//    ShareViewController *share = [[ShareViewController alloc] init];
+//    [self addOneChlildVc:share title:@"分享" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_setting_hl"];
     
     MoreViewController *more = [[MoreViewController alloc] init];
     [self addOneChlildVc:more title:@"更多" imageName:@"activity_dragonball_spot2" selectedImageName:@"tabbar_setting_hl"];

@@ -10,7 +10,7 @@
 #import "CYTabBarController.h"
 #import "NewfeatureViewController.h"
 #import "PanoramaViewController.h"
-#import "UMSocial.h"
+
 #import <RQShineLabel.h>
 
 @interface AppDelegate ()
@@ -101,7 +101,7 @@
     // 3.显示窗口(成为主窗口)
     [self.window makeKeyAndVisible];
     
-    [UMSocialData setAppKey:@"55229ae0fd98c571f90014b2"];
+//    [UMSocialData setAppKey:@"55229ae0fd98c571f90014b2"];
     
     return YES;
 }

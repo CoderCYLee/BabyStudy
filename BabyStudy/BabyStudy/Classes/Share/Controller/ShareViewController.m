@@ -7,9 +7,9 @@
 //
 
 #import "ShareViewController.h"
-#import "UMSocial.h"
+//#import "UMSocial.h"
 
-@interface ShareViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate, UMSocialUIDelegate>
+@interface ShareViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     UITextView *myTextView;
     UIImageView *imageView;
@@ -78,7 +78,7 @@
 
 - (void)login
 {
-    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"55229ae0fd98c571f90014b2" shareText:myTextView.text                                     shareImage:imageView.image shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToWechatSession,UMShareToTencent,UMShareToWechatTimeline, UMShareToQzone, UMShareToQQ,UMShareToDouban, UMShareToEmail, UMShareToSms, nil] delegate:self];
+//    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"55229ae0fd98c571f90014b2" shareText:myTextView.text                                     shareImage:imageView.image shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToWechatSession,UMShareToTencent,UMShareToWechatTimeline, UMShareToQzone, UMShareToQQ,UMShareToDouban, UMShareToEmail, UMShareToSms, nil] delegate:self];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
