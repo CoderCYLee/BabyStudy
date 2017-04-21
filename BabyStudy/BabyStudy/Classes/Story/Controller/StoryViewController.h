@@ -10,6 +10,6 @@
 
 @interface StoryViewController : UIViewController
 
--(void)button_click:(UIButton *)sender;
+- (void)button_click:(UIButton *)sender;
 
 @end

@@ -13,22 +13,22 @@
 /**
  *播放音乐文件
  */
-+(BOOL)playMusic:(NSString *)filename;
++ (BOOL)playMusic:(NSString *)filename;
 /**
  *暂停播放
  */
-+(void)pauseMusic:(NSString *)filename;
++ (void)pauseMusic:(NSString *)filename;
 /**
  *播放音乐文件
  */
-+(void)stopMusic:(NSString *)filename;
++ (void)stopMusic:(NSString *)filename;
 
 /**
  *播放音效文件
  */
-+(void)playSound:(NSString *)filename;
++ (void)playSound:(NSString *)filename;
 /**
  *销毁音效
  */
-+(void)disposeSound:(NSString *)filename;
++ (void)disposeSound:(NSString *)filename;
 @end

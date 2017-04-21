@@ -15,8 +15,8 @@
 static NSMutableDictionary *_musicPlayers;
 + (NSMutableDictionary *)musicPlayers
 {
-    if (_musicPlayers==nil) {
-        _musicPlayers=[NSMutableDictionary dictionary];
+    if (_musicPlayers == nil) {
+        _musicPlayers = [NSMutableDictionary dictionary];
     }
     return _musicPlayers;
 }
@@ -27,8 +27,8 @@ static NSMutableDictionary *_musicPlayers;
 static NSMutableDictionary *_soundIDs;
 + (NSMutableDictionary *)soundIDs
 {
-    if (_soundIDs==nil) {
-        _soundIDs=[NSMutableDictionary dictionary];
+    if (_soundIDs == nil) {
+        _soundIDs = [NSMutableDictionary dictionary];
     }
     return _soundIDs;
 }
@@ -68,7 +68,7 @@ static NSMutableDictionary *_soundIDs;
     return YES;//正在播放，那么就返回YES
 }
 
-+(void)pauseMusic:(NSString *)filename
++ (void)pauseMusic:(NSString *)filename
 {
     if (!filename) return;//如果没有传入文件名，那么就直接返回
     
@@ -80,7 +80,7 @@ static NSMutableDictionary *_soundIDs;
     
 }
 
-+(void)stopMusic:(NSString *)filename
++ (void)stopMusic:(NSString *)filename
 {
     if (!filename) return;//如果没有传入文件名，那么就直接返回
     
@@ -95,11 +95,11 @@ static NSMutableDictionary *_soundIDs;
 }
 
 //播放音效
-+(void)playSound:(NSString *)filename
++ (void)playSound:(NSString *)filename
 {
     if (!filename) return;
     //1.取出对应的音效
-    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntegerValue];
+    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntValue];
     
     //2.播放音效
     //2.1如果音效ID不存在，那么就创建
@@ -126,7 +126,7 @@ static NSMutableDictionary *_soundIDs;
     if (!filename) return;
     
     //1.取出对应的音效
-    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntegerValue];
+    SystemSoundID soundID = [[self soundIDs][filename] unsignedIntValue];
     
     //2.销毁
     if (soundID) {

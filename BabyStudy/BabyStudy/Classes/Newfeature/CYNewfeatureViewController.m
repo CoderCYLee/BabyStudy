@@ -12,7 +12,9 @@
 #import "CYTabBarController.h"
 
 @interface CYNewfeatureViewController () <UIScrollViewDelegate>
+
 @property (nonatomic, weak) UIPageControl *pageControl;
+
 @end
 
 @implementation CYNewfeatureViewController

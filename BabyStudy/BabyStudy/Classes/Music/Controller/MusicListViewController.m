@@ -24,14 +24,53 @@
     [super viewDidLoad];
     
     [self createUI];
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return MusicBox.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"tableCell" owner:self options:nil] lastObject];
+        cell.opaque = NO;//opaque不透明的，NO为透明的
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat: @"activity_dragonball_spot%d", arc4random()%5+1]];
+    Music *tmp = MusicBox[indexPath.row];
+    UILabel *musicLable = (UILabel*)[cell viewWithTag:1];
+    musicLable.backgroundColor = [UIColor clearColor];
+    musicLable.text = tmp.musicName;
+    UILabel *typeLable = (UILabel*)[cell viewWithTag:2];
+    typeLable.backgroundColor = [UIColor clearColor];
+    typeLable.text = tmp.musicType;
+    UILabel *testLable = (UILabel*)[cell viewWithTag:3];
+    testLable.backgroundColor=[UIColor clearColor];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    music = MusicBox[indexPath.row];
+    musicBoxViewController.music = music;
+    musicBoxViewController.MusicBox = MusicBox;
+    musicBoxViewController.running = NO;
+    [self.navigationController pushViewController:musicBoxViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)musicCode
@@ -124,50 +163,13 @@
     [self.navigationController pushViewController:musicBoxViewController animated:YES];
 }
 
--(void)downloadmusic:(id)sender
+- (void)downloadmusic:(id)sender
 {
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return MusicBox.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)didReceiveMemoryWarning {
     
-    static NSString *CellIdentifier = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"tableCell" owner:self options:nil] lastObject];
-        cell.opaque = NO;//opaque不透明的，NO为透明的
-        cell.backgroundColor = [UIColor clearColor];
-    }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat: @"activity_dragonball_spot%d", arc4random()%5+1]];
-    Music *tmp = MusicBox[indexPath.row];
-    UILabel *musicLable = (UILabel*)[cell viewWithTag:1];
-    musicLable.backgroundColor = [UIColor clearColor];
-    musicLable.text = tmp.musicName;
-    UILabel *typeLable = (UILabel*)[cell viewWithTag:2];
-    typeLable.backgroundColor = [UIColor clearColor];
-    typeLable.text = tmp.musicType;
-    UILabel *testLable = (UILabel*)[cell viewWithTag:3];
-    testLable.backgroundColor=[UIColor clearColor];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    music = MusicBox[indexPath.row];
-    musicBoxViewController.music = music;
-    musicBoxViewController.MusicBox = MusicBox;
-    musicBoxViewController.running = NO;
-    [self.navigationController pushViewController:musicBoxViewController animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

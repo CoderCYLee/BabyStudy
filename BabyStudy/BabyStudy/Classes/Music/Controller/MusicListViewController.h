@@ -18,6 +18,7 @@
     UITableViewCell *tableViewCell;
     UITableView *mytableview;
 }
+
 @property (nonatomic, strong) MusicBoxViewController *musicBoxViewController;
 @property (nonatomic, strong) Music *music;
 @property (nonatomic, copy) NSMutableArray *MusicBox;
