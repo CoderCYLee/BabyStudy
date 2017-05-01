@@ -7,8 +7,11 @@
 //
 
 #import "DetailViewController.h"
+//#import <CYPhotoLib.h>
 
 @interface DetailViewController ()
+
+@property (nonatomic, strong) UIBarButtonItem *leftItem;
 
 @end
 
@@ -26,13 +29,7 @@
         self.navigationController.navigationBar.alpha = 0;
     }];
     
-    UIButton *lbtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [lbtn setTitle:@"返回" forState:UIControlStateNormal];
-    [lbtn addTarget:self action:@selector(btnItemClick) forControlEvents:UIControlEventTouchUpInside];
-    [lbtn setTintColor:[UIColor orangeColor]];
-    lbtn.frame = CGRectMake(1, 0, 60, 30);
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:lbtn];
-    self.navigationItem.leftBarButtonItem = item;
+    self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self performSelector:@selector(dataInit)];
     [self performSelector:@selector(viewInit)];
@@ -92,6 +89,7 @@
     rootImageView.contentMode = UIViewContentModeScaleAspectFill;
     rootImageView.image= [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)self.newtag]];
     _songIndex = (int)self.newtag;
+    rootImageView.clipsToBounds = YES;
     [self.view addSubview:rootImageView];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, screenH-100, screenW, 100)];
@@ -339,7 +337,7 @@
     }
     [self loadMusic:[_pNames objectAtIndex:_songIndex] type:@"mp3"];
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",[_pNames objectAtIndex:_songIndex]]];
-    [self setBackground:image];
+    [self setBackgroundImage:image];
     _label.text= [_hNames objectAtIndex:_songIndex];
     if(playFlag==YES) {
         [_audioPlayer play];
@@ -363,7 +361,7 @@
     [self loadMusic:[_pNames objectAtIndex:_songIndex] type:@"mp3"];
     
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",[_pNames objectAtIndex:_songIndex]]];
-    [self setBackground:image];
+    [self setBackgroundImage:image];
     _label.text = [_hNames objectAtIndex:_songIndex];
     if(playFlag == YES) {
         [_audioPlayer play];
@@ -373,26 +371,30 @@
 //背景
 - (void)setBackground
 {
-    UIImagePickerController *picker= [[UIImagePickerController alloc] init];
-    picker.sourceType= UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    picker.delegate=self;
-    [self presentViewController:picker animated:YES completion:nil];
-
+//    __weak typeof(self) weakSelf = self;
+//    CYPhotoPicker *picker = [[CYPhotoPicker alloc] init];
+//    [picker showInSender:self isSingleSel:YES handle:^(NSArray<UIImage *> *photos, NSArray<PHAsset *> *assets) {
+//        
+//        [weakSelf setBackgroundImage:photos.lastObject];
+//    }];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
-{
-    rootImageView.image = image;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)setBackground:(UIImage *)image
+- (void)setBackgroundImage:(UIImage *)image
 {
     rootImageView.image = image;    
 }
+
+- (UIBarButtonItem *)leftItem {
+    if (!_leftItem) {
+        UIButton *lbtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [lbtn setTitle:@"返回" forState:UIControlStateNormal];
+        [lbtn addTarget:self action:@selector(btnItemClick) forControlEvents:UIControlEventTouchUpInside];
+        [lbtn setTintColor:[UIColor orangeColor]];
+        lbtn.frame = CGRectMake(1, 0, 60, 30);
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:lbtn];
+        _leftItem = item;
+    }
+    return _leftItem;
+}
+
 @end

@@ -93,7 +93,7 @@
     Music *music16 = [[Music alloc] initWithMusicName:@"机器猫" andMusicType:@"mp3"];
     Music *music17 = [[Music alloc] initWithMusicName:@"拔萝卜" andMusicType:@"mp3"];
     Music *music18 = [[Music alloc] initWithMusicName:@"火车开了" andMusicType:@"mp3"];
-    
+        
     [MusicBox addObject:music1];
     [MusicBox addObject:music2];
     [MusicBox addObject:music3];

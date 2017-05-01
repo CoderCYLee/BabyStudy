@@ -36,8 +36,5 @@
 - (void)snow;
 /** 加载音乐 */
 - (void)loadMusic:(NSString*)name type:(NSString*)type;
-/** 设置背景 */
-- (void)setBackground:(UIImage*)image;
-/** 播放 */
-- (void)play:(UIButton*)button;
+
 @end

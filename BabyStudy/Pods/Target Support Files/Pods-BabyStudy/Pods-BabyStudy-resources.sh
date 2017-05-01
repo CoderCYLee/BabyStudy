@@ -21,6 +21,9 @@ case "${TARGETED_DEVICE_FAMILY}" in
   3)
     TARGET_DEVICE_ARGS="--target-device tv"
     ;;
+  4)
+    TARGET_DEVICE_ARGS="--target-device watch"
+    ;;
   *)
     TARGET_DEVICE_ARGS="--target-device mac"
     ;;
@@ -77,9 +80,43 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYBack@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYBack@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_circle@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_delete.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_delete@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBottomCollectionViewCell.xib"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBrowserCell.xib"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBrowserFooter.xib"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYBack@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYBack@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_circle@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_delete.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_delete@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_selected@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_Tanhao@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected@2x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Resource/CYPhoto_unselected@3x.png"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBottomCollectionViewCell.xib"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBrowserCell.xib"
+  install_resource "CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/View/CYPhotoBrowserFooter.xib"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 

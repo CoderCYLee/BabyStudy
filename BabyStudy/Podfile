@@ -6,8 +6,9 @@ pod 'MJExtension'
 pod 'MJRefresh'
 pod 'AFNetworking'
 pod 'SDWebImage'
-pod 'MBProgressHUD’
+pod 'MBProgressHUD'
 pod 'pop'
 pod 'RQShineLabel'
+pod 'CYPhotoLib'
 
 end
