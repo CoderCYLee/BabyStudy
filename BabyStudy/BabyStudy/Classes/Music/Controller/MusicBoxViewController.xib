@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="yd3" translatesAutoresizingMaskIntoConstraints="NO" id="85">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="yd3" translatesAutoresizingMaskIntoConstraints="NO" id="85">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="19">
@@ -350,7 +350,10 @@
                     <exclude reference="23"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="3Oi-mA-mGl"/>
+                    <exclude reference="7E4-6v-G8n"/>
+                    <exclude reference="CUl-cp-Uov"/>
+                    <exclude reference="KWT-zX-gQu"/>
+                    <exclude reference="ccH-0B-3KD"/>
                     <exclude reference="6gq-2X-PPq"/>
                     <exclude reference="hUD-tA-gNN"/>
                     <exclude reference="3dE-fc-1FQ"/>
@@ -359,10 +362,8 @@
                     <exclude reference="Fvv-W8-nPk"/>
                     <exclude reference="Npx-yl-pCd"/>
                     <exclude reference="Yuj-pl-LQa"/>
-                    <exclude reference="7E4-6v-G8n"/>
-                    <exclude reference="CUl-cp-Uov"/>
-                    <exclude reference="KWT-zX-gQu"/>
-                    <exclude reference="ccH-0B-3KD"/>
+                    <exclude reference="BU4-f5-pWV"/>
+                    <exclude reference="Rza-66-kbM"/>
                     <exclude reference="1db-9u-IuS"/>
                     <exclude reference="Dhb-bH-CVc"/>
                     <exclude reference="Nla-pv-ukT"/>
@@ -371,6 +372,7 @@
                     <exclude reference="TbB-78-xYp"/>
                     <exclude reference="orb-wG-LcN"/>
                     <exclude reference="rqm-tt-DoR"/>
+                    <exclude reference="3Oi-mA-mGl"/>
                     <exclude reference="YXM-zv-Dg2"/>
                     <exclude reference="bRn-07-V8P"/>
                     <exclude reference="hP1-hy-Ahx"/>
@@ -378,8 +380,6 @@
                     <exclude reference="VRH-Lu-SF8"/>
                     <exclude reference="aB8-4y-kbV"/>
                     <exclude reference="l2L-jz-jaQ"/>
-                    <exclude reference="BU4-f5-pWV"/>
-                    <exclude reference="Rza-66-kbM"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -390,7 +390,10 @@
                     <include reference="23"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="3Oi-mA-mGl"/>
+                    <include reference="7E4-6v-G8n"/>
+                    <include reference="CUl-cp-Uov"/>
+                    <include reference="KWT-zX-gQu"/>
+                    <include reference="ccH-0B-3KD"/>
                     <include reference="6gq-2X-PPq"/>
                     <include reference="hUD-tA-gNN"/>
                     <include reference="3dE-fc-1FQ"/>
@@ -399,10 +402,8 @@
                     <include reference="Fvv-W8-nPk"/>
                     <include reference="Npx-yl-pCd"/>
                     <include reference="Yuj-pl-LQa"/>
-                    <include reference="7E4-6v-G8n"/>
-                    <include reference="CUl-cp-Uov"/>
-                    <include reference="KWT-zX-gQu"/>
-                    <include reference="ccH-0B-3KD"/>
+                    <include reference="BU4-f5-pWV"/>
+                    <include reference="Rza-66-kbM"/>
                     <include reference="1db-9u-IuS"/>
                     <include reference="Dhb-bH-CVc"/>
                     <include reference="Nla-pv-ukT"/>
@@ -411,6 +412,7 @@
                     <include reference="TbB-78-xYp"/>
                     <include reference="orb-wG-LcN"/>
                     <include reference="rqm-tt-DoR"/>
+                    <include reference="3Oi-mA-mGl"/>
                     <include reference="YXM-zv-Dg2"/>
                     <include reference="bRn-07-V8P"/>
                     <include reference="hP1-hy-Ahx"/>
@@ -418,8 +420,6 @@
                     <include reference="VRH-Lu-SF8"/>
                     <include reference="aB8-4y-kbV"/>
                     <include reference="l2L-jz-jaQ"/>
-                    <include reference="BU4-f5-pWV"/>
-                    <include reference="Rza-66-kbM"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="141" y="264"/>

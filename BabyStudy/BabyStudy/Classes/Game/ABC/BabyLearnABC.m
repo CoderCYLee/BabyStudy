@@ -17,8 +17,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"音乐开关" style:UIBarButtonItemStylePlain target:self action:@selector(button_click)];
         
         self.title = @"跟我学英语字母";
@@ -39,6 +38,7 @@
     self.navigationController.navigationBarHidden=YES;
     UIImageView *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, screenW, screenH)];
     imageview.image=[UIImage imageNamed:@"background7.png"];
+    imageview.clipsToBounds = YES;
     imageview.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageview];
     [self beginDH];

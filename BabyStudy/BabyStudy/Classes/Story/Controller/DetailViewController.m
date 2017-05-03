@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-//#import <CYPhotoLib.h>
+#import <CYPhotoLib.h>
 
 @interface DetailViewController ()
 
@@ -371,12 +371,12 @@
 //背景
 - (void)setBackground
 {
-//    __weak typeof(self) weakSelf = self;
-//    CYPhotoPicker *picker = [[CYPhotoPicker alloc] init];
-//    [picker showInSender:self isSingleSel:YES handle:^(NSArray<UIImage *> *photos, NSArray<PHAsset *> *assets) {
-//        
-//        [weakSelf setBackgroundImage:photos.lastObject];
-//    }];
+    __weak typeof(self) weakSelf = self;
+    CYPhotoPicker *picker = [[CYPhotoPicker alloc] init];
+    [picker showInSender:self isSingleSel:YES handle:^(NSArray<UIImage *> *photos, NSArray<PHAsset *> *assets) {
+        
+        [weakSelf setBackgroundImage:photos.lastObject];
+    }];
 }
 
 - (void)setBackgroundImage:(UIImage *)image
