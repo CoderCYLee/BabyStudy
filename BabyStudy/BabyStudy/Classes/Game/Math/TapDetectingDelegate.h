@@ -12,6 +12,6 @@
 @protocol TapDetectingDelegate <NSObject>
 
 @required
-- (void)tapDetectView:(UIView *)view gotDoubleTapAtPoint: (CGPoint)tapPoint;
+- (void)tapDetectView:(UIView *)view gotDoubleTapAtPoint:(CGPoint)tapPoint;
 
 @end

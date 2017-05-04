@@ -57,12 +57,13 @@
     picLabel.textColor = [UIColor orangeColor];
     [self.view addSubview:picLabel];
     
-    imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, screenH/2, screenW-120, screenH/3-10)];
+    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, screenH/2, screenW-120, screenH/3-10)];
     imageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:imageView];
     imageView.image = [UIImage imageNamed:@"xk"];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
     [imageView setUserInteractionEnabled:YES];
-    UITapGestureRecognizer * clickGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickGesture:)];
+    UITapGestureRecognizer * clickGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickGesture:)];
     [imageView addGestureRecognizer:clickGesture];
     
 //    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -107,7 +108,7 @@
     if (buttonIndex == 2) {
         return;
     }
-    UIImagePickerController * pc = [[UIImagePickerController alloc]init];
+    UIImagePickerController * pc = [[UIImagePickerController alloc] init];
     
     if(buttonIndex == 0 && TARGET_IPHONE_SIMULATOR) {
         return;
