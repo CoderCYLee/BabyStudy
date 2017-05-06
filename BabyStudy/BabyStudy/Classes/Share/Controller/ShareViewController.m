@@ -66,20 +66,13 @@
     UITapGestureRecognizer * clickGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickGesture:)];
     [imageView addGestureRecognizer:clickGesture];
     
-//    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.frame = CGRectMake(screenW/3*2, screenH/6*5, screenW/3-20, 46);
-//    [button setBackgroundImage:[UIImage imageNamed:@"weibobg.png"] forState:UIControlStateNormal];
-//    [button setAlpha:0.7];
-//    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-    
     UIBarButtonItem *login = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(login)];
     self.navigationItem.rightBarButtonItem = login;
 }
 
 - (void)login
 {
-//    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"55229ae0fd98c571f90014b2" shareText:myTextView.text                                     shareImage:imageView.image shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToWechatSession,UMShareToTencent,UMShareToWechatTimeline, UMShareToQzone, UMShareToQQ,UMShareToDouban, UMShareToEmail, UMShareToSms, nil] delegate:self];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
