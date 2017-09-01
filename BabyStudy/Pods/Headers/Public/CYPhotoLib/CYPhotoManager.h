@@ -1,1 +1,0 @@
-../../../CYPhotoLib/CYPhotoLib/Classes/CYPhotoPicker/Manager/CYPhotoManager.h
